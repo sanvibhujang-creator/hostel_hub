@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Complaint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #c0392b;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, select, textarea, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav style="background-color: #333; padding: 10px;">
+  <a href="/" style="color: white; margin-right: 15px; text-decoration: none;">🏠 Home</a>
+  <a href="/facilities" style="color: white; margin-right: 15px; text-decoration: none;">🛠 Facilities</a>
+  <!--
+  <a href="/checkin" style="color: white; margin-right: 15px; text-decoration: none;">✅ Check-In</a>
+  <a href="/complaint" style="color: white; margin-right: 15px; text-decoration: none;">📣 Complaint</a>
+  <a href="/feedback" style="color: white; margin-right: 15px; text-decoration: none;">⭐ Feedback</a>
+  -->
+  <a href="/view" style="color: white; text-decoration: none;">📊 View Database</a>
+  </nav>
+
+
+  <h1>Complaint Form</h1>
+  <form method="POST" action="/complaint">
+    <input type="text" name="room" placeholder="Enter registration or room number" required />
+    <select name="department" required>
+      <option value="">Select Department</option>
+      <option value="Plumbing">Plumbing</option>
+      <option value="Electrical">Electrical</option>
+      <option value="Carpentry">Carpentry</option>
+      <option value="General">General</option>
+    </select>
+    <textarea name="description" placeholder="Describe your issue..." rows="4" required></textarea>
+    <button type="submit">Submit Complaint</button>
+  </form>
+</body>
+</html>

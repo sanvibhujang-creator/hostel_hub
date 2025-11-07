@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Feedback</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0fff0;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #27ae60;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, select, textarea, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e8449;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav style="background-color: #333; padding: 10px;">
+  <a href="/" style="color: white; margin-right: 15px; text-decoration: none;">🏠 Home</a>
+  <a href="/facilities" style="color: white; margin-right: 15px; text-decoration: none;">🛠 Facilities</a>
+  <a href="/checkin" style="color: white; margin-right: 15px; text-decoration: none;">✅ Check-In</a>
+  <a href="/complaint" style="color: white; margin-right: 15px; text-decoration: none;">📣 Complaint</a>
+  <a href="/feedback" style="color: white; margin-right: 15px; text-decoration: none;">⭐ Feedback</a>
+  <a href="/view" style="color: white; text-decoration: none;">📊 View Database</a>
+ </nav>
+
+
+  <h1>Feedback Form</h1>
+  <form method="POST" action="/feedback">
+    <input type="text" name="room" placeholder="Enter registration or room number (optional)" />
+    <select name="rating" required>
+      <option value="">Rate your experience</option>
+      <option value="5">5 - Excellent</option>
+      <option value="4">4 - Good</option>
+      <option value="3">3 - Average</option>
+      <option value="2">2 - Poor</option>
+      <option value="1">1 - Very Poor</option>
+    </select>
+    <textarea name="comments" placeholder="Your comments..." rows="4" required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>
